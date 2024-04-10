@@ -1,13 +1,14 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-var */
-export default function taskBlock(trueOrFalse) {
-  var task = false;
-  var task2 = true;
+export default function (boolean) {
+  return new Promise((resolve, reject) => {
+    const object = {
+      status: 200,
+      body: 'Success',
+    };
 
-  if (trueOrFalse) {
-    const task = true;
-    const task2 = false;
-  }
-
-  return [task, task2];
+    if (boolean === true) {
+      resolve(object);
+    } else {
+      reject(Error('The fake API is not working currently'));
+    }
+  });
 }
